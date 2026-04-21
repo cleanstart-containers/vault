@@ -4,37 +4,25 @@ The CleanStart Vault image provides a production-ready, security-hardened contai
 
 📌 **Base Foundation**: Production-ready container from cleanstart.
 
-**Image Path**: `public.ecr.aws/your-alias/vault`
+**Image Path**: `ghcr.io/cleanstart-containers/vault`
+
 **Registry**: cleanstart Registry
-
-## Key Features
-Core capabilities and strengths of this container
-
-
-
-## Common Use Cases
-Typical scenarios where this container excels
-
-
 
 ## Pull Latest Image
 Download the container image from the registry
 
 ```bash
-docker pull public.ecr.aws/your-alias/vault:vault
+docker pull ghcr.io/cleanstart-containers/vault:latest
 ```
 ```bash
-docker pull public.ecr.aws/your-alias/vault:container
-```
-```bash
-docker pull public.ecr.aws/your-alias/vault:enterprise
+docker pull ghcr.io/cleanstart-containers/vault:latest-dev
 ```
 
 ## Basic Run
 Run the container with basic configuration
 
 ```bash
-docker run -it --name vault public.ecr.aws/your-alias/vault:latest
+docker run -it --name vault ghcr.io/cleanstart-containers/vault:latest-dev
 ```
 
 ## Production Deployment
@@ -45,33 +33,20 @@ docker run -d --name vault-prod \
   --security-opt=no-new-privileges \
   --user 1000:1000 \
   --restart unless-stopped \
-  public.ecr.aws/your-alias/vault:latest
+  ghcr.io/cleanstart-containers/vault:latest-dev
 ```
 
 Volume Mount Mount local directory for persistent data
 
 ```bash
-docker run -v /app:/app public.ecr.aws/your-alias/vault:latest
+docker run -v /app:/app ghcr.io/cleanstart-containers/vault:latest-dev
 ```
 
 Port Forwarding Run with custom port mappings
 
 ```bash
-docker run -p 8080:8080 public.ecr.aws/your-alias/vault:latest
+docker run -p 8080:8080 ghcr.io/cleanstart-containers/vault:latest-dev
 ```
-
-## Environment Variables
-Configuration options available through environment variables
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| ENV | production | Environment mode |
-| LOG_LEVEL | info | Logging level |
-
-## Security Best Practices
-Recommended security configurations and practices
-
-
 
 ## Kubernetes Security Context
 Recommended security context for Kubernetes deployments
@@ -92,7 +67,7 @@ Essential links and resources for further information
 
 - **Container Registry**: [https://www.cleanstart.com/](https://www.cleanstart.com/)
 - **CleanStart Community Images**: [https://hub.docker.com/u/cleanstart](https://hub.docker.com/u/cleanstart)
-- **How-to-Run CleanStart images & sample projects**: [https://github.com/cleanstart-dev/cleanstart-containers](https://github.com/cleanstart-dev/cleanstart-containers)
+- **How-to-Run CleanStart images & sample projects**: [https://github.com/cleanstart-containers](https://github.com/cleanstart-containers)
   - How to run sample projects using Dockerfile
   - How to deploy via Kubernetes YAML
   - How to migrate from public images to CleanStart images
